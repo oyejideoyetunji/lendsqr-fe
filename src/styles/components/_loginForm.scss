@@ -1,0 +1,31 @@
+form.login {
+    @extend .w-100;
+
+    .h2 {
+        @include h2-mixin;
+        color: $color-blue1;
+        letter-spacing: -0.04em;
+        font-weight: 700;
+        line-height: 65px;
+    }
+
+    .small-txt {
+        @include txt-mixin;
+        color: $color-blueGrey;
+        font-weight: 200;
+    }
+
+    .frm-grp {
+        @extend .p-y-28;
+
+        & > * {
+            @extend .p-y-10;
+        }
+
+        .action-txt {
+            @include small-txt-mixin;
+            color: $color-primary;
+            font-weight: 600;
+        }
+    }
+}

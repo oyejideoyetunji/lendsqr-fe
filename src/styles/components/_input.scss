@@ -1,0 +1,63 @@
+.input-wrapper {
+    @extend .w-100;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+
+    @mixin border($color: false) {
+        @if $color {
+            border: 1px solid $color;
+        } @else {
+            border: none;
+        }
+    }
+
+    .no-border {
+        @include border;
+    }
+
+    .focus-border {
+        &:focus {
+            @include border($color-primary);
+        }
+    }
+
+    .error-border {
+        &:focus {
+            @include border($color-danger);
+        }
+    }
+
+    .label {
+        @include txt-mixin;
+        color: $color-blueGrey;
+        font-weight: 500;
+    }
+
+    .label {
+        @include txt-mixin;
+        color: $color-danger;
+        font-weight: 500;
+    }
+
+    .input-wrapper {
+        @extend .w-100;
+        height: fit-content;
+        position: relative;
+    }
+
+    input {
+        @extend .w-100;
+        @extend .p-8;
+        outline: none;
+        border-radius: 4px;
+        @include border($color-borderGrey);
+
+        &::placeholder {
+            font-size: 13px;
+            font-weight: 200;
+            color: $color-blueGrey;
+        }
+    }
+}

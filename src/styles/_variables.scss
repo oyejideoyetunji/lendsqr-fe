@@ -1,0 +1,31 @@
+// colors
+
+$color-white: #FFFFFF;
+$color-primary: #39CDCC;
+$color-blue1: #213F7D;
+$color-blueGrey: #545F7D;
+$color-borderGrey: rgba(84, 95, 125, 0.15);
+$color-purple: #DF18FF;
+$color-purpleBg: rgba(223, 24, 255, 0.1);
+$color-info: #5718FF;
+$color-infoBg: rgba(87, 24, 255, 0.1);
+$color-success: #39CD62;
+$color-successBg: rgba(57, 205, 98, 0.1);
+$color-warning: #E9B200;
+$color-warningBg: rgba(233, 178, 0, 0.1);
+$color-danger: #E4033B;
+$color-dangerBg: rgba(228, 3, 59, 0.1);
+
+
+// break-points
+
+$breakpoint-xs: 480px;
+$breakpoint-sm: 640px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 1024px;
+$breakpoint-xl: 1280px;
+$breakpoint-xxl: 1536px;
+
+
+// shadows
+$page-card-shadow: 0px 15px 90px rgba(0, 0, 0, 0.03);

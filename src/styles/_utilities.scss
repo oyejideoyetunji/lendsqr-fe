@@ -1,0 +1,153 @@
+$percents: (10, 20, 25, 30, 40, 50, 60, 70, 75, 80, 100);
+$spaces: (2, 4, 6, 8, 10, 12, 14, 16, 18, 22, 24, 28, 32, 40, 48);
+$sides: (top, bottom, left, rightt);
+
+
+// spacing
+
+@each $percent in $percents {
+    .w-#{$percent} {
+        width: #{percentage($percent / 100)};
+    }
+
+    .h-#{$percent} {
+        height: #{percentage($percent / 100)};
+    }
+}
+
+@each $space in $spaces {
+      @each $side in $sides {
+            .m-#{str-slice($side, 0, 1)}-#{$space} {
+                margin-#{$side}: #{$space}px;
+            }
+
+            .p-#{str-slice($side, 0, 1)}-#{$space} {
+                padding-#{$side}: #{$space}px;
+            }
+      }
+}
+
+@each $space in $spaces {
+  .m-#{$space} {
+    margin: #{$space}px;
+  }
+  
+  .p-#{$space} {
+    padding: #{$space}px;
+  }
+  
+  .m-x-#{$space} {
+    margin-left: #{$space}px;
+    margin-right: #{$space}px;
+  }
+  
+  .p-x-#{$space} {
+    padding-left: #{$space}px;
+    padding-right: #{$space}px;
+  }
+  
+  .m-y-#{$space} {
+    margin-top: #{$space}px;
+    margin-bottom: #{$space}px;
+  }
+  
+  .p-y-#{$space} {
+    padding-top: #{$space}px;
+    padding-bottom: #{$space}px;
+  }
+}
+
+// media queries
+
+@mixin respond($breakpoint) {
+    @if($breakpoint == xs)  {
+      @media (min-width: $breakpoint-xs) { @content };
+    }
+    @if($breakpoint == sm)  {
+      @media (min-width: $breakpoint-sm) { @content };
+    }
+    @if($breakpoint == md)  {
+      @media (min-width: $breakpoint-md) { @content };
+    }
+    @if($breakpoint == lg)  {
+      @media (min-width: $breakpoint-lg) { @content };
+    }
+    @if($breakpoint == xl)  {
+      @media (min-width: $breakpoint-xl) { @content };
+    }
+    @if($breakpoint == xxl)  {
+      @media (min-width: $breakpoint-xxl) { @content };
+    }
+}
+
+
+// layout 
+
+.hide {
+    display: none;
+}
+
+.block {
+    display: block;
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+.flex {
+    display: flex;
+}
+
+
+@mixin flex-direction($direction: false) {
+    @if $direction {
+        flex-direction: $direction;
+    }
+}
+
+@mixin flex-align($align: false) {
+    @if $align {
+        align-items: $align;
+    }
+}
+
+@mixin flex-justify($justify: false) {
+    @if $justify {
+        justify-content: $justify;
+    }
+}
+
+
+// Typography
+@mixin h2-mixin {
+    font-size: 2rem;
+
+    @include respond(lg) {
+        font-size: 2.5rem;
+    }
+}
+
+@mixin h3-mixin {
+    font-size: 1.5rem;
+
+    @include respond(lg) {
+        font-size: 2rem;
+    }
+}
+
+@mixin h4-mixin {
+    font-size: 1.3rem;
+
+    @include respond(lg) {
+        font-size: 1.8rem;
+    }
+}
+
+@mixin  txt-mixin {
+    font-size: 1rem;
+}
+
+@mixin  small-txt-mixin {
+    font-size: 0.8rem;
+}

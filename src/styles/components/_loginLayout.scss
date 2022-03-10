@@ -1,0 +1,82 @@
+.login-layout {
+    @extend .w-100;
+    @extend .h-100;
+    @extend .flex;
+
+    background-color: $color-white;
+
+    .page-card-padding {
+        @extend .p-16;
+
+        @include respond(sm) {
+            padding: 18px;
+        }
+
+        @include respond(md) {
+            padding: 28px;
+        }
+
+        @include respond(lg) {
+            padding: 60px 38px;
+        }
+    }
+
+    .brand-section-card {
+        @extend .hide;
+        @extend .page-card-padding;
+        @extend .w-50;
+        @extend .h-100;
+
+        @include respond(lg) {
+            display: block;
+        }
+    }
+
+    .logo-wrp {
+        @extend .w-100;
+        @extend .flex;
+        @include flex-justify(flex-start);
+    }
+
+    .logo {
+        max-width: 120px;
+    }
+
+    .login-image-wrp {
+        @extend .w-100;
+        @extend .h-100;
+        @extend .flex;
+        @include flex-align(center);
+        @include flex-justify(center);
+    }
+
+    .login-image {
+        @extend .w-100;
+    }
+
+    .login-section-card {
+        @extend .page-card-padding;
+        @extend .w-100;
+        @extend .h-100;
+        box-shadow: $page-card-shadow;
+
+        @include respond(lg) {
+            width: 50%;
+        }
+    }
+
+    .mobile-logo-wrp {
+        @extend .logo-wrp;
+
+        @include respond(lg) {
+            display: none;
+        }
+    }
+
+    .login-form-wrp {
+        @extend .w-100;
+        @extend .h-100;
+        @extend .flex;
+        @include flex-align(center);
+    }
+}
