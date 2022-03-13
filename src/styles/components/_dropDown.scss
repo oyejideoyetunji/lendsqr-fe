@@ -1,0 +1,28 @@
+.container-relative-drp-dwn {
+    position: relative;
+    cursor: pointer;
+
+    .drp-dwn-menu-wrp {
+        @extend .hide;
+        width: 150px;
+        height: 70px;
+        border: 1px solid $color-drop-down-border;
+        box-shadow: $drop-down-shadow;
+        border-radius: 4px;
+        z-index: $z-tt;
+        position: absolute;
+        left: -130px;
+        bottom: -70px;
+        background-color: $color-white;
+
+        &.open {
+            display: block;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+    }
+}

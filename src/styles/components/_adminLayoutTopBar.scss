@@ -1,0 +1,149 @@
+.layout-admin-top-bar-wrp {
+    @extend .w-100;
+    @extend .p-y-16;
+    @extend .flex;
+    align-items: center;
+    height: 80px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: $color-white;
+    box-shadow: $top-bar-shadow;
+    z-index: $z-tt;
+
+    .logo-column {
+        width: 60px;
+        @extend .flex;
+        @extend .h-100;
+        align-items: center;
+        padding-left: 16px;
+        padding-right: 12px;
+        
+        @include respond(xs) {
+            padding-right: 12px;
+            padding-left: 18px;
+            width: 80px;
+        }
+
+        @include respond(md) {
+            padding-right: 12px;
+            padding-left: 22px;
+            width: 100px;
+        }
+
+        @include respond(lg) {
+            width: 230px;
+            padding-left: 16px;
+        }
+
+        .logo-mobile {
+            max-width: 40px;
+
+            @include respond(xs) {
+                max-width: 50px;
+            }
+
+            @include respond(md) {
+                max-width: 65px;
+            }
+
+            @include respond(lg) {
+                display: none;
+            }
+        }
+
+        .logo {
+            @extend .hide;
+            max-width: 100px;
+
+            @include respond(lg) {
+                display: inline-block;
+            }
+        }
+    }
+
+    .top-bar-body {
+        @extend .w-100;
+        @extend .flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @extend .layout-admin-body-padding;
+
+        @include respond(lg) {
+            width: calc(100% - 230px);
+        }
+
+        .search-bar {
+            @extend .flex;
+            align-items: center;
+            width: 60%;
+
+            @include respond(lg) {
+                width: 40%;
+            }
+        }
+
+        .user-column {
+            @extend .flex;
+            align-items: center;
+            justify-content: flex-end;
+
+            .notification {
+                font-size: 16px;
+                padding-right: 18px;
+                color: $color-blue1;
+
+                @include respond(md) {
+                    font-size: 18px;
+                }
+
+                @include respond(lg) {
+                    font-size: 20px;
+                }
+            }
+
+            .small-avatar {
+                height: 30px;
+                width: 30px;
+                border-radius: 50%;
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: cover;
+
+                @include respond(md) {
+                    height: 35px;
+                    width: 35px;
+                }
+
+                @include respond(lg) {
+                    height: 40px;
+                    width: 40px;
+                }
+            }
+
+            .user-name-wrp {
+                @extend .flex;
+                align-items: center;
+                justify-content: flex-end;
+                font-size: 1.3rem;
+                margin-left: 8px;
+                color: $color-blue1;
+
+                i {
+                    cursor: pointer;
+                }
+
+                span {
+                    @extend .hide;
+                    @include small-txt-mixin;
+                    padding-right: 6px;
+
+                    @include respond(md) {
+                        display: inline-block;
+                    }
+                }
+            }
+        }
+    }
+}

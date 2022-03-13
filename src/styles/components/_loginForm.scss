@@ -18,8 +18,8 @@ form.login {
     .frm-grp {
         @extend .p-y-28;
 
-        & > * {
-            @extend .p-y-10;
+        > * {
+            @extend .m-y-18;
         }
 
         .action-txt {

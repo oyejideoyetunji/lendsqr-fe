@@ -1,0 +1,34 @@
+$variants: (base, success, warning, danger);
+
+.tag {
+    width: fit-content;
+    @extend .p-x-10;
+    @extend .p-y-6;
+    @extend .flex;
+    border-radius: 20px;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 400;
+
+    @each $variant in $variants {
+        &.#{$variant} {
+            @if $variant == base {
+                color: $color-base;
+                background-color: $color-baseBg;
+            }
+            @if $variant == success {
+                color: $color-success;
+                background-color: $color-successBg;
+            }
+            @if $variant == warning {
+                color: $color-warning;
+                background-color: $color-warningBg;
+            }
+            @if $variant == danger {
+                color: $color-danger;
+                background-color: $color-dangerBg;
+            }
+        }
+    }
+}

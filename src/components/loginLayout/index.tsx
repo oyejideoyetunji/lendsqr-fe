@@ -9,7 +9,7 @@ interface LoginLayoutProps {
 
 const LoginLayout = (props: LoginLayoutProps) => {
     return (
-        <main className="login-layout">
+        <main className="layout-login">
             <section className="brand-section-card">
                 <section className="logo-wrp">
                     <img className="logo" src={logo} alt="logo" />

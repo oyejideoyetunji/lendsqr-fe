@@ -6,3 +6,8 @@ export interface Action<T, K> {
 export interface AuthUser {
     email: string
 }
+
+export interface LoginInput {
+    email: string;
+    password: string;
+}

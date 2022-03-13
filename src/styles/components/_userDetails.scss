@@ -1,0 +1,268 @@
+.page-wrp-user-details {
+    @extend .w-100;
+    @extend .p-y-40;
+
+    .page-heading {
+        @include h4-mixin;
+        font-weight: 500;
+        color: $color-blue1;
+    }
+
+    .page-arrow-nav {
+        @extend .flex;
+        align-items: center;
+        color: $color-blueGrey;
+        font-size: 32px;
+        font-weight: 300;
+
+        @include respond(sm) {
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        span {
+            @extend .hide;
+            @extend .p-x-8;
+            @include small-txt-mixin;
+            font-weight: 400;
+
+            @include respond(sm) {
+                display: inline-block;
+            }
+        }
+    }
+
+    .flex-justify-btwn-align-ctr {
+        @extend .w-100;
+        @extend .flex;
+        @extend .p-y-22;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: flex-end;
+
+        @include respond(md) {
+            flex-wrap: nowrap;
+            justify-content: space-between;
+        }
+
+        .flex-justfy-end-align-ctr {
+            @extend .w-100;
+            @extend .flex;
+            @extend .p-y-8;
+            align-items: center;
+            justify-content: flex-end;
+
+            > :last-child{
+                margin-left: 8px;
+            }
+
+            @include respond(md) {
+                width: max-content;
+            }
+        }
+    }
+
+    .card-full-screen {
+        @extend .card;
+        @extend .w-100;
+        @extend .m-y-28;
+        @extend .p-x-20;
+    }
+
+    .flex-col_md-row {
+        @extend .flex;
+        flex-direction: column;
+
+
+        @include respond(md) {
+            flex-direction: row;
+            align-items: center;
+        }
+
+        .border-wrp {
+            @extend .hide;
+            @extend .m-x-22;
+            height: 70px;
+            border: 1px solid $color-borderGrey;
+
+            @include respond(md) {
+                display: inline-block;
+            }
+        }
+
+        .txt-area {
+            @extend .flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            p {
+                @include h5-mixin;
+                color: $color-blue1;
+                font-weight: 500;
+            }
+
+            span {
+                @include small-txt-mixin;
+                color: $color-blue1;
+                font-weight: 400;
+            }
+
+            > * {
+                @extend .p-y-2;
+                @extend .p-l-8;
+            }
+        }
+    }
+
+    .flex-col_lg-row {
+        @extend .flex;
+        flex-direction: column;
+
+
+        @include respond(lg) {
+            flex-direction: row;
+            align-items: center;
+        }
+
+        .basic-info-card {
+            @extend .flex;
+            align-items: center;
+            @extend .p-y-12;
+
+            .avatar {
+                height: 60px;
+                width: 60px;
+                border-radius: 50%;
+                background-color: $color-bodyBg;
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: cover;
+
+                @include respond(md) {
+                    height: 80px;
+                    width: 80px;
+                }
+
+                @include respond(lg) {
+                    height: 100px;
+                    width: 100px;
+                }
+            }
+
+            .txt-area {
+                @extend .flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+
+                p {
+                    @include h5-mixin;
+                    color: $color-blue1;
+                    font-weight: 500;
+                }
+
+                span {
+                    @include small-txt-mixin;
+                    color: $color-blueGrey;
+                    font-weight: 400;
+                }
+
+                > * {
+                    @extend .p-y-2;
+                    @extend .p-l-8;
+                }
+            }
+        }
+
+        .border-wrp {
+            @extend .hide;
+            @extend .m-x-22;
+            height: 70px;
+            border: 1px solid $color-borderGrey;
+
+            @include respond(lg) {
+                display: inline-block;
+            }
+        }
+
+        .user-tier {
+            @extend .flex;
+            @extend .p-y-12;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            span {
+                @include small-txt-mixin;
+                color: $color-blueGrey;
+                font-size: 14px;
+                font-weight: 400;
+            }
+        }
+    }
+
+    .plain-tab {
+        @extend .w-100;
+        @extend .flex;
+        @extend .auto-flow-x;
+        align-items: flex-end;
+        justify-content: space-between;
+
+        span {
+            @extend .p-12;
+            @include small-txt-mixin;
+            color: $color-black;
+            font-weight: 400;
+            
+            .active {
+                color: $color-primary;
+                border-bottom: 1px solid $color-primary;
+            }
+        }
+    }
+
+    .container-btm-boder {
+        @extend .w-100;
+        @extend .p-y-18;
+        border-bottom: 1px solid $color-borderGrey;
+
+        .hd-small-light {
+            @extend .p-y-16;
+            @include small-txt-mixin;
+            color: $color-blue1;
+            font-weight: 500;
+        }
+
+        .txt-grid {
+            @extend .grid;
+            @extend .w-100;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            column-gap: 1rem;
+            row-gap: 1.5rem;
+        }
+
+        .txt-area {
+            @extend .flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            p {
+                @include txt-mixin;
+                color: $color-blueGrey;
+                font-weight: 400;
+            }
+
+            span {
+                color: $color-blueGrey;
+                font-weight: 300;
+                font-size: 14px;
+            }
+
+            > * {
+                @extend .p-y-2;
+            }
+        }
+    }
+}

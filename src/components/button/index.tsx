@@ -1,18 +1,20 @@
 import React, { ButtonHTMLAttributes } from "react";
 
 interface ButtonProps {
-    state?: string
-    variant?: string
+    state?: "filled" | "outlined"
+    variant?: "primary" | "danger"
 }
 
 const Button = (props: ButtonProps & ButtonHTMLAttributes<HTMLButtonElement>) => {
 
-    const { state, variant, ...rest } = props
+    const { state, variant, className, ...rest } = props
 
     return (
         <button
             {...rest}
-            className="base-button primary filled"
+            className={
+                `base-button ${state || "filled"} ${variant || "primary"} ${className}`
+            }
         >
         </button>
     )

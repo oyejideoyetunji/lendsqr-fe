@@ -1,5 +1,5 @@
 import React, { InputHTMLAttributes } from "react";
-import { isEmptyString } from "../../lib/utils/validation";
+import { isEmptyString } from "../../lib/validations/general";
 
 interface InputProps {
     label?: string;

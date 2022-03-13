@@ -1,0 +1,23 @@
+.wrp-side-menu-itm {
+    @extend .flex;
+    @extend .align-center;
+    @extend .p-l-16;
+    @extend .p-y-12;
+    color: $color-blue1Alt;
+    cursor: pointer;
+
+    &.active {
+        color: $color-blue1;
+        border-left: 6px solid $color-primary;
+        background-color: $color-primaryBg;
+
+        span {
+            font-weight: 500;
+        }
+    }
+
+    span.txt {
+        font-size: 14px;
+        @extend .p-l-8;
+    }
+}

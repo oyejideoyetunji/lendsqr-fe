@@ -2,7 +2,6 @@
     @extend .w-100;
     display: flex;
     flex-direction: column;
-    margin: 0;
     padding: 0;
 
     @mixin border($color: false) {
@@ -49,7 +48,8 @@
 
     input {
         @extend .w-100;
-        @extend .p-8;
+        @extend .p-y-6;
+        @extend .p-x-12;
         outline: none;
         border-radius: 4px;
         @include border($color-borderGrey);

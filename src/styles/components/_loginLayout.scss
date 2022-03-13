@@ -1,4 +1,4 @@
-.login-layout {
+.layout-login {
     @extend .w-100;
     @extend .h-100;
     @extend .flex;
@@ -6,18 +6,19 @@
     background-color: $color-white;
 
     .page-card-padding {
-        @extend .p-16;
+        @extend .p-x-18;
+        @extend .p-y-40;
 
         @include respond(sm) {
-            padding: 18px;
+            padding: 40px 22px;
         }
 
         @include respond(md) {
-            padding: 28px;
+            padding: 48px;
         }
 
         @include respond(lg) {
-            padding: 60px 38px;
+            padding: 60px;
         }
     }
 

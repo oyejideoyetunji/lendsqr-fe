@@ -1,0 +1,45 @@
+.layout-admin {
+    @extend .w-100;
+
+    .container {
+        @extend .w-100;
+        @extend .flex;
+        align-items: stretch;
+        padding-top: 80px;
+
+        .body{
+            @extend .layout-admin-body-padding;
+
+            @extend .w-100;
+            min-height: 100vh;
+            background-color: $color-bodyBg;
+
+            @include respond(lg) {
+                width: calc(100% - 230px);
+            }
+        }
+
+        .txt-thick {
+            color: $color-blue1;
+            @extend .p-l-16;
+
+            .icon {
+                font-size: 1rem;
+            }
+            .txt {
+                @extend .p-l-8;
+                font-weight: 400;
+                font-size: 14px;
+            }
+        }
+
+        .menu-hd {
+            color: $color-blue1;
+            @extend .p-y-14;
+            @extend .p-l-16;
+            font-weight: 500;
+            font-size: 12px;
+            text-transform: uppercase;
+        }
+    }
+}

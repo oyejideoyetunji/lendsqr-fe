@@ -1,5 +1,5 @@
 $percents: (10, 20, 25, 30, 40, 50, 60, 70, 75, 80, 100);
-$spaces: (2, 4, 6, 8, 10, 12, 14, 16, 18, 22, 24, 28, 32, 40, 48);
+$spaces: (2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 28, 32, 40, 48);
 $sides: (top, bottom, left, rightt);
 
 
@@ -99,6 +99,20 @@ $sides: (top, bottom, left, rightt);
     display: flex;
 }
 
+.grid {
+    display: grid;
+}
+
+// flex
+
+.align-center {
+    align-items: center;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
 
 @mixin flex-direction($direction: false) {
     @if $direction {
@@ -128,11 +142,19 @@ $sides: (top, bottom, left, rightt);
     }
 }
 
+@mixin h2-mixin {
+    font-size: 1.8rem;
+
+    @include respond(lg) {
+        font-size: 2rem;
+    }
+}
+
 @mixin h3-mixin {
     font-size: 1.5rem;
 
     @include respond(lg) {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
 }
 
@@ -140,7 +162,15 @@ $sides: (top, bottom, left, rightt);
     font-size: 1.3rem;
 
     @include respond(lg) {
-        font-size: 1.8rem;
+        font-size: 1.5rem;
+    }
+}
+
+@mixin h5-mixin {
+    font-size: 1.1rem;
+
+    @include respond(lg) {
+        font-size: 1.3rem;
     }
 }
 
@@ -150,4 +180,44 @@ $sides: (top, bottom, left, rightt);
 
 @mixin  small-txt-mixin {
     font-size: 0.8rem;
+}
+
+.layout-admin-body-padding {
+    padding-right: 16px;
+    padding-left: 16px;
+
+    @include respond(xs) {
+        padding-right: 18px;
+        padding-left: 18px;
+    }
+
+    @include respond(md) {
+        padding-right: 22px;
+        padding-left: 22px;
+    }
+
+    @include respond(lg) {
+        padding-left: 38px;
+        padding-right: 38px;
+    }
+}
+
+.auto-flow-x {
+    overflow-x: auto;
+}
+
+.auto-flow-y {
+    overflow-y: auto;
+}
+
+
+.no-flow-y {
+    overflow-y: unset;
+}
+
+.card {
+    background-color: $color-white;
+    border: 1px solid $color-card-border;
+    box-shadow: $card-shadow;
+    border-radius: 2px;
 }

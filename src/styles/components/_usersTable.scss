@@ -1,0 +1,64 @@
+.table-users {
+    @extend .w-100;
+    border-collapse: collapse;
+
+    td, th {
+        @extend .p-y-18;
+        text-align: left;
+    }
+
+    th {
+        span {
+            font-size: 15px;
+            color: $color-blueGrey;
+            font-weight: 600;
+
+            &:first-child {
+                display: inline-block;
+                @extend .p-r-8;
+            }
+        }
+    }
+
+    td {
+        span {
+            @include small-txt-mixin;
+            color: $color-blueGrey;
+            font-weight: 400;
+        }
+
+        &:not(:last-child) {
+            @extend .p-r-8;
+        }
+    }
+
+    tr:not(:last-child) td {
+        border-bottom: 1px solid $color-borderGrey;
+    }
+
+    li {
+        display: flex;
+        align-items: center;
+        padding: 8px 12px;
+        cursor: pointer;
+        background-color: $color-white;
+
+        &:not(:last-child) {
+            border-bottom: 1px solid $color-borderGrey;
+        }
+
+        &:hover {
+            background-color: $color-bodyBg;
+        }
+    }
+
+    .drp-dwn-list-itm {
+        @include small-txt-mixin;
+        font-weight: 500;
+        display: block;
+
+        :first-child{
+            @extend .p-x-4;
+        }
+    }
+}

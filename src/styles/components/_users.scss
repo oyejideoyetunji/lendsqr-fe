@@ -1,0 +1,26 @@
+.page-wrp-users {
+    @extend .w-100;
+    @extend .p-y-40;
+
+    .page-heading {
+        @include h4-mixin;
+        font-weight: 500;
+        color: $color-blue1;
+    }
+
+    .auto-grid-stats{
+        @extend .p-y-28;
+        @extend .grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+    }
+
+    .card-users-table {
+        @extend .card;
+        @extend .w-100;
+        @extend .p-16;
+        @extend .auto-flow-x;
+        overflow-y: visible;
+        height: fit-content;
+    }
+}

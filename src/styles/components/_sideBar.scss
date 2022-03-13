@@ -1,0 +1,12 @@
+.container-side-bar {
+    @extend .hide;
+    width: 230px;
+    min-height: 100vh;
+    background-color: $color-white;
+    box-shadow: $side-bar-shadow;
+    @extend .p-y-24;
+
+    @include respond(lg) {
+        display: block;
+    }
+}
