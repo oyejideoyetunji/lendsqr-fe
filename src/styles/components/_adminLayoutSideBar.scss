@@ -1,0 +1,28 @@
+.wrp-admin-layout-side-bar {
+    @extend .w-100;
+    @extend .m-0;
+    @extend .p-0;
+    
+    .txt-thick {
+        color: $color-blue1;
+        @extend .p-l-16;
+
+        .icon {
+            font-size: 1rem;
+        }
+        .txt {
+            @extend .p-l-8;
+            font-weight: 400;
+            font-size: 14px;
+        }
+    }
+
+    .menu-hd {
+        color: $color-blue1;
+        @extend .p-y-14;
+        @extend .p-l-16;
+        font-weight: 500;
+        font-size: 12px;
+        text-transform: uppercase;
+    }
+}

@@ -1,60 +1,30 @@
-import React, { ReactNode } from "react";
-import { useDispatch } from "react-redux";
-import { useLocation } from "react-router-dom";
-import { removeStoreData, StorageKeys } from "../../lib/localStorage";
-import { updateAuth } from "../../store/reducers/authReducer";
+import React, { ReactNode, useState } from "react";
+import AdminLayoutSideBar from "../adminLayoutSideBar";
 import AdminLayoutTopBar from "../adminLayoutTopBar";
-import SideBar from "../sidebar";
-import SideMenuItem, { LogoutMenu } from "../sideMenuItem";
+import Modal from "../modal";
+
 
 interface AdminLayoutProps {
     children: ReactNode;
 }
 
 const AdminLayout = (props: AdminLayoutProps) => {
-    const { pathname } = useLocation()
-    const dispatch = useDispatch()
+
+    const [showMobileMenu, setShowMobileMenu] = useState(false)
 
     return (
         <main className="layout-admin">
-            <AdminLayoutTopBar />
+            <AdminLayoutTopBar ontoggleMobileMenu={toggleMobileMenu} />
             <section className="container">
-                <SideBar>
-                    <div className="p-b-16">
-                        <div className="flex align-center p-t-18 p-b-28 txt-thick">
-                            <p className="icon">
-                                <i className="fas fa-briefcase" />
-                            </p>
-                            <p className="txt">Switch organization</p>
-                        </div>
-                        <SideMenuItem
-                            route={{
-                                label: "Dashboard",
-                                icon: "fas fa-home",
-                                url: "",
-                            }}
-                        />
+                <section className="wrp-side-bar">
+                    <AdminLayoutSideBar />
+                </section>
+                <Modal className="mobile-menu-modal" showModal={showMobileMenu}>
+                    <div onClick={toggleMobileMenu} className="close-icon">
+                        <i className="fas fa-times" />
                     </div>
-                    <div className="menu-hd">
-                        customers
-                    </div>
-                    <SideMenuItem
-                        route={{
-                            label: "Users",
-                            icon: "fas fa-users-friends",
-                            url: "/users",
-                        }}
-                        isActive={pathname === "/users"}
-                    />
-                    <LogoutMenu
-                        route={{
-                            label: "Logout",
-                            icon: "fas fa-sign-out-alt",
-                            url: "",
-                        }}
-                        onClick={onLogout}
-                    />
-                </SideBar>
+                    <AdminLayoutSideBar />
+                </Modal>
                 <section className="body">
                     {props.children}
                 </section>
@@ -62,9 +32,8 @@ const AdminLayout = (props: AdminLayoutProps) => {
         </main>
     )
 
-    function onLogout() {
-        removeStoreData(StorageKeys.AuthUser)
-        dispatch(updateAuth({ user: null }))
+    function toggleMobileMenu() {
+        setShowMobileMenu(!showMobileMenu)
     }
 }
 

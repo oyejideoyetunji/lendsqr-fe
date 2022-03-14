@@ -7,6 +7,35 @@
         align-items: stretch;
         padding-top: 80px;
 
+        .wrp-side-bar {
+            @extend .hide;
+
+            @include respond(xl) {
+                display: block;
+            }
+        }
+
+        .mobile-menu-modal {
+            justify-content: flex-start;
+            cursor: default;
+
+            .close-icon {
+                width: 50px;
+                height: 50px;
+                position: absolute;
+                top: 0;
+                right: 0;
+                font-size: 20px;
+                color: $color-blue1;
+                cursor: pointer;
+                background-color: $color-bodyBgAlt;
+
+                @extend .flex;
+                @extend .justify-center;
+                @extend .align-center
+            }
+        }
+
         .body{
             @extend .layout-admin-body-padding;
 
@@ -14,32 +43,9 @@
             min-height: 100vh;
             background-color: $color-bodyBg;
 
-            @include respond(lg) {
+            @include respond(xl) {
                 width: calc(100% - 230px);
             }
-        }
-
-        .txt-thick {
-            color: $color-blue1;
-            @extend .p-l-16;
-
-            .icon {
-                font-size: 1rem;
-            }
-            .txt {
-                @extend .p-l-8;
-                font-weight: 400;
-                font-size: 14px;
-            }
-        }
-
-        .menu-hd {
-            color: $color-blue1;
-            @extend .p-y-14;
-            @extend .p-l-16;
-            font-weight: 500;
-            font-size: 12px;
-            text-transform: uppercase;
         }
     }
 }

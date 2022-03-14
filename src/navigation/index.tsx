@@ -7,6 +7,7 @@ import AdminLayout from "../components/adminLayout"
 import { isEmptyString } from "../lib/validations/general"
 import Login from "../publicScreens/login"
 import { StoreState } from "../store/reducers"
+import { routes } from "./routes"
 
 
 
@@ -16,16 +17,16 @@ export function Navigation() {
         ? (
             <AdminLayout>
                 <Routes>
-                    <Route path="/users"  element={<Users />} />
-                    <Route path="/users/:id" element={<UserDetails />} />
-                    <Route path="*" element={<Navigate replace to="/users" />} />
+                    <Route path={routes.users}  element={<Users />} />
+                    <Route path={routes.singleUser} element={<UserDetails />} />
+                    <Route path="*" element={<Navigate replace to={routes.users} />} />
                 </Routes>
             </AdminLayout>
         )
         : (
             <Routes>
-                <Route path="/login" element={<Login />} />
-                <Route path="*" element={<Navigate replace to="/login" />} />
+                <Route path={routes.login} element={<Login />} />
+                <Route path="*" element={<Navigate replace to={routes.login} />} />
             </Routes >
         )
 }

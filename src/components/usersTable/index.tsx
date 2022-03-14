@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import { NavLink } from "react-router-dom"
+import { getUrlString, routes } from "../../navigation/routes"
 import DropDown from "../dropdown"
 import Tag, { TagVariant } from "../tag"
 
@@ -52,7 +53,7 @@ const UsersTable = () => {
             </thead>
             <tbody>
                 {
-                    ["1afa", "2aga", "3yaa", "4afa", "5ab"].map(itm => (
+                    ["1", "2", "3", "4", "5"].map(itm => (
                         <tr key={itm}>
                             <td><span>Lensqr</span></td>
                             <td><span>usernamehere</span></td>
@@ -76,7 +77,7 @@ const UsersTable = () => {
                                     onOpen={() => setDropDownToShow(itm)}
                                     menuList={
                                         <>
-                                            <NavLink to="/users/mmmmmmmm">
+                                            <NavLink to={`${getUrlString(routes.singleUser)}${itm}`}>
                                                 <li>
                                                     <span className="drp-dwn-list-itm">
                                                         <i className="fas fa-eye"/>

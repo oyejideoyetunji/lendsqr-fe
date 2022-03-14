@@ -2,12 +2,26 @@
     @extend .w-100;
     border-collapse: collapse;
 
+    thead, tbody, tr {
+        @extend .w-100;
+    }
+
     td, th {
         @extend .p-y-18;
         text-align: left;
     }
 
     th {
+        white-space: nowrap;
+
+        &:not(:last-child) {
+            min-width: 150px;
+
+            @include respond(xl) {
+                min-width: 110px;
+            }
+        }
+
         span {
             font-size: 15px;
             color: $color-blueGrey;
@@ -15,7 +29,11 @@
 
             &:first-child {
                 display: inline-block;
-                @extend .p-r-8;
+                margin-right: 8px;
+            }
+
+            &:last-child {
+                cursor: pointer;
             }
         }
     }

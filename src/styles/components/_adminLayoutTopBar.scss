@@ -12,7 +12,6 @@
     z-index: $z-tt;
 
     .logo-column {
-        width: 60px;
         @extend .flex;
         @extend .h-100;
         align-items: center;
@@ -22,18 +21,33 @@
         @include respond(xs) {
             padding-right: 12px;
             padding-left: 18px;
-            width: 80px;
         }
 
         @include respond(md) {
             padding-right: 12px;
             padding-left: 22px;
-            width: 100px;
         }
 
-        @include respond(lg) {
+        @include respond(xl) {
             width: 230px;
             padding-left: 16px;
+        }
+
+        .mobile-menu-icon {
+            width: 30px;
+            height: fit-content;
+            font-size: 16px;
+            color: $color-blue1;
+            cursor: pointer;
+            @extend .p-r-8;
+
+            @include respond(sm) {
+                font-size: 18px;
+            }
+
+            @include respond(xl) {
+                display: none;
+            }
         }
 
         .logo-mobile {
@@ -47,7 +61,7 @@
                 max-width: 65px;
             }
 
-            @include respond(lg) {
+            @include respond(xl) {
                 display: none;
             }
         }
@@ -56,7 +70,7 @@
             @extend .hide;
             max-width: 100px;
 
-            @include respond(lg) {
+            @include respond(xl) {
                 display: inline-block;
             }
         }
@@ -70,7 +84,7 @@
 
         @extend .layout-admin-body-padding;
 
-        @include respond(lg) {
+        @include respond(xl) {
             width: calc(100% - 230px);
         }
 
