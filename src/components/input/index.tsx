@@ -12,7 +12,7 @@ const Input = (props: InputProps & InputHTMLAttributes<HTMLInputElement>) => {
     const { label, error, noBorder, ...rest } = props 
 
     return (
-        <div className="input-wrapper">
+        <div className="input-container">
             {!isEmptyString(label) && (
                 <span className="label">{label}</span>
             )}

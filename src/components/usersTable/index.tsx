@@ -1,12 +1,22 @@
 import React, { useState } from "react"
 import { NavLink } from "react-router-dom"
+import { UserSumary } from "../../lib/typeDefinitions"
 import { getUrlString, routes } from "../../navigation/routes"
 import DropDown from "../dropdown"
 import Tag, { TagVariant } from "../tag"
 
+interface UsersTableProps {
+    users: UserSumary[]
+}
 
-const UsersTable = () => {
+const UsersTable = (props: UsersTableProps) => {
     const [dropDownToShow, setDropDownToShow] = useState("");
+    const statusToVariantMap = {
+        "inactive": "base",
+        "active": "success",
+        "pending": "warning",
+        "blacklisted": "danger",
+    }
 
     return (
         <table className="table-users">
@@ -53,16 +63,16 @@ const UsersTable = () => {
             </thead>
             <tbody>
                 {
-                    ["1", "2", "3", "4", "5"].map(itm => (
-                        <tr key={itm}>
-                            <td><span>Lensqr</span></td>
-                            <td><span>usernamehere</span></td>
-                            <td><span>mail@mail.com</span></td>
-                            <td><span>0902424424242</span></td>
-                            <td><span>{new Date().toDateString()}</span></td>
+                    props.users.map(itm => (
+                        <tr key={itm.id}>
+                            <td><span>{itm.organization}</span></td>
+                            <td><span>{itm.user_name}</span></td>
+                            <td><span>{itm.email}</span></td>
+                            <td><span>{itm.phone_number}</span></td>
+                            <td><span>{new Date(itm.date_joined).toDateString()}</span></td>
                             <td>
-                                <Tag variant={TagVariant.SUCCESS}>
-                                    Inactive
+                                <Tag variant={statusToVariantMap[itm.status] as TagVariant}>
+                                    {itm.status}
                                 </Tag>
                             </td>
                             <td>
@@ -72,12 +82,12 @@ const UsersTable = () => {
                                             <i className="fas fa-ellipsis-h" />
                                         </span>
                                     }
-                                    open={dropDownToShow === itm}
+                                    open={dropDownToShow === itm.id}
                                     onClose={() => setDropDownToShow("")}
-                                    onOpen={() => setDropDownToShow(itm)}
+                                    onOpen={() => setDropDownToShow(itm.id)}
                                     menuList={
                                         <>
-                                            <NavLink to={`${getUrlString(routes.singleUser)}${itm}`}>
+                                            <NavLink to={`${getUrlString(routes.singleUser)}${itm.id}`}>
                                                 <li>
                                                     <span className="drp-dwn-list-itm">
                                                         <i className="fas fa-eye"/>
