@@ -5,6 +5,10 @@ $sides: (top, bottom, left, right);
 
 // spacing
 
+.w-fit {
+    width: fit-content;
+}
+
 @each $percent in $percents {
     .w-#{$percent} {
         width: #{percentage($percent / 100)};

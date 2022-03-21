@@ -10,7 +10,7 @@ export const adminDashboardRoutes = {
         {
             label: "Users",
             icon: "fas fa-user-friends",
-            url: "/users",
+            url: routes.users,
         }
     ]
 }

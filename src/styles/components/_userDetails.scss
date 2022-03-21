@@ -9,6 +9,7 @@
     }
 
     .page-arrow-nav {
+        width: fit-content;
         @extend .flex;
         align-items: center;
         color: $color-blueGrey;
@@ -79,22 +80,14 @@
             align-items: center;
         }
 
-        .border-wrp {
-            @extend .hide;
-            @extend .m-x-22;
-            height: 70px;
-            border: 1px solid $color-borderGrey;
-
-            @include respond(md) {
-                display: inline-block;
-            }
-        }
-
         .txt-area {
             @extend .flex;
             flex-direction: column;
-            align-items: center;
             justify-content: center;
+
+            @include respond(md) {
+                align-items: center;
+            }
 
             p {
                 @include h5-mixin;
@@ -110,7 +103,6 @@
 
             > * {
                 @extend .p-y-2;
-                @extend .p-l-8;
             }
         }
     }
@@ -120,7 +112,7 @@
         flex-direction: column;
 
 
-        @include respond(lg) {
+        @include respond(md) {
             flex-direction: row;
             align-items: center;
         }
@@ -128,21 +120,17 @@
         .basic-info-card {
             @extend .flex;
             align-items: center;
-            @extend .p-y-12;
+            @extend .p-t-18;
+            @extend .p-b-12;
 
             .avatar {
-                height: 60px;
-                width: 60px;
+                height: 80px;
+                width: 80px;
                 border-radius: 50%;
                 background-color: $color-bodyBg;
                 background-repeat: no-repeat;
                 background-position: center;
                 background-size: cover;
-
-                @include respond(md) {
-                    height: 80px;
-                    width: 80px;
-                }
 
                 @include respond(lg) {
                     height: 100px;
@@ -153,8 +141,11 @@
             .txt-area {
                 @extend .flex;
                 flex-direction: column;
-                align-items: center;
                 justify-content: center;
+
+                @include respond(md) {
+                    align-items: center;
+                }
 
                 p {
                     @include h5-mixin;
@@ -175,23 +166,21 @@
             }
         }
 
-        .border-wrp {
-            @extend .hide;
-            @extend .m-x-22;
-            height: 70px;
-            border: 1px solid $color-borderGrey;
-
-            @include respond(lg) {
-                display: inline-block;
-            }
-        }
-
         .user-tier {
             @extend .flex;
             @extend .p-y-12;
+            @extend .m-y-12;
             flex-direction: column;
-            align-items: center;
             justify-content: center;
+
+            @include respond(md) {
+                align-items: center;
+                border-left: 2px solid $color-borderGrey;
+                border-right: 2px solid $color-borderGrey;
+                height: 70px;
+                padding: 0 22px;
+                margin: 0 22px;
+            }
 
             span {
                 @include small-txt-mixin;
@@ -210,10 +199,12 @@
         justify-content: space-between;
 
         span {
-            @extend .p-12;
+            @extend .m-r-14;
+            @extend .p-y-18;
             @include small-txt-mixin;
             color: $color-black;
             font-weight: 400;
+            white-space: nowrap;
             
             .active {
                 color: $color-primary;
@@ -229,7 +220,7 @@
 
         .hd-small-light {
             @extend .p-y-16;
-            @include small-txt-mixin;
+            font-size: 15px;
             color: $color-blue1;
             font-weight: 500;
         }
@@ -237,9 +228,9 @@
         .txt-grid {
             @extend .grid;
             @extend .w-100;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            column-gap: 1rem;
-            row-gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            column-gap: 2.5rem;
+            row-gap: 2rem;
         }
 
         .txt-area {
@@ -249,15 +240,17 @@
             justify-content: center;
 
             p {
-                @include txt-mixin;
+                font-size: 15px;
                 color: $color-blueGrey;
-                font-weight: 400;
+                font-weight: 500;
+                white-space: nowrap;
             }
 
             span {
                 color: $color-blueGrey;
                 font-weight: 300;
-                font-size: 14px;
+                font-size: 13px;
+                white-space: nowrap;
             }
 
             > * {

@@ -48,6 +48,8 @@ export interface UserDetails {
         marital_status: "single" | "married"
         children: "none" | "yes",
         type_of_residence: string
+        account_number: number
+        bank_name: string
     }
     ed_and_emp: {
         level: "SSCE" | "OND/NCE" | "HND/HNCE" | "B.Sc" | "M.Sc" | "Phd",
@@ -67,6 +69,6 @@ export interface UserDetails {
         full_name: string,
         phone_number: string,
         email: string,
-        elationship: string
+        relationship: string
     }[]
 }

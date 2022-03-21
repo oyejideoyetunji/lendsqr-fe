@@ -15,7 +15,6 @@ const Pagination = () => {
     } = useSelector((state: StoreState) => state)
 
     const totalPages = getTotalPages(users.length, pageSize)
-    // const pageNumber = getPageNumber(currentPageIndex, totalPages)
 
     const onNextPage = () => {
         if (currentPageIndex < totalPages - pageNumberToIndexOffset) {

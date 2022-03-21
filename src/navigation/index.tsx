@@ -1,7 +1,7 @@
 import React from "react"
 import { useSelector } from "react-redux"
 import { Navigate, Route, Routes } from "react-router-dom"
-import UserDetails from "../adminScreens/userDetails"
+import ViewUserDetails from "../adminScreens/userDetails"
 import Users from "../adminScreens/users"
 import AdminLayout from "../components/adminLayout"
 import { isEmptyString } from "../lib/validations/general"
@@ -18,7 +18,7 @@ export function Navigation() {
             <AdminLayout>
                 <Routes>
                     <Route path={routes.users}  element={<Users />} />
-                    <Route path={routes.singleUser} element={<UserDetails />} />
+                    <Route path={routes.singleUser} element={<ViewUserDetails />} />
                     <Route path="*" element={<Navigate replace to={routes.users} />} />
                 </Routes>
             </AdminLayout>
