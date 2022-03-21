@@ -23,6 +23,7 @@ const AdminLayoutTopBar = ({ ontoggleMobileMenu }: AdminLayoutTopBarProps) => {
             <section className="top-bar-body">
                 <section className="search-bar">
                     <Input
+                    placeholder="Search for anything"
                         childNode={
                             <div className="search-input-btn cursor-pointer">
                                 <i className="fas fa-search" />
