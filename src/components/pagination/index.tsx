@@ -30,6 +30,12 @@ const Pagination = () => {
         }
     }
 
+    const onSetPage = (index: number) => {
+        if (index < totalPages && index >= 0) {
+            dispatch(setCurrentPageIndex(index))
+        }
+    }
+
     const onSetPageSize = (event: ChangeEvent<HTMLSelectElement>) => {
         const { value } = event.target
         dispatch(setPageSize(Number(value)))
@@ -66,7 +72,46 @@ const Pagination = () => {
                 >
                     <i className="fas fa-chevron-left" />
                 </span>
-                        
+
+                <span
+                    className="cursor-pointer"
+                    onClick={() => onSetPage(0)}
+                >
+                    1
+                </span>
+                <span
+                    className="cursor-pointer"
+                    onClick={() => onSetPage(1)}
+                >
+                    2
+                </span>
+                <span
+                    className="cursor-pointer"
+                    onClick={() => onSetPage(2)}
+                >
+                    3
+                </span>
+                <span>...</span>
+
+
+                <span
+                    className="cursor-pointer"
+                    onClick={() => onSetPage(totalPages - 3) }
+                >
+                    {totalPages - 2}
+                </span>
+                <span
+                    className="cursor-pointer"
+                    onClick={() => onSetPage(totalPages - 2)}
+                >
+                    {totalPages - 1}
+                </span>
+                <span
+                    className="cursor-pointer"
+                    onClick={() => onSetPage(totalPages - pageNumberToIndexOffset)}
+                >
+                    {totalPages}
+                </span>
                 <span
                     className={
                         `${(currentPageIndex < totalPages - pageNumberToIndexOffset)

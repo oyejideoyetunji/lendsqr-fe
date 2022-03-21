@@ -9,6 +9,10 @@ $sides: (top, bottom, left, right);
     width: fit-content;
 }
 
+.cursor-pointer {
+    cursor: pointer;
+}
+
 @each $percent in $percents {
     .w-#{$percent} {
         width: #{percentage($percent / 100)};

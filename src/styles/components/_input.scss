@@ -45,12 +45,14 @@
         @extend .w-100;
         height: fit-content;
         position: relative;
+
+        .position-wrp {
+            position: absolute;
+        }
     }
 
     input {
         @extend .w-100;
-        @extend .p-y-6;
-        @extend .p-x-12;
         outline: none;
         border-radius: 4px;
         @include border($color-borderGrey);
