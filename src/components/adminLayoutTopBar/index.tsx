@@ -31,7 +31,7 @@ const AdminLayoutTopBar = ({ ontoggleMobileMenu }: AdminLayoutTopBarProps) => {
                         }
                         childNodeWidth="60px"
                         childNodeRight="0"
-                        childNodeTop="1px"
+                        childNodeTop="0"
                     />
                 </section>
 
