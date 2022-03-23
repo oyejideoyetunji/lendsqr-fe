@@ -7,6 +7,7 @@ import Tag, { TagVariant } from "../tag"
 
 interface UsersTableProps {
     users: UserSumary[]
+    onShowFilterForm(): void
 }
 
 const UsersTable = (props: UsersTableProps) => {
@@ -24,37 +25,49 @@ const UsersTable = (props: UsersTableProps) => {
                 <tr>
                     <th>
                         <span>ORGANIZATION</span>
-                        <span>
+                        <span
+                            onClick={props.onShowFilterForm}
+                        >
                             <i className="fas fa-filter" />
                         </span>
                     </th>
                     <th>
                         <span>USERNAME</span>
-                        <span>
+                        <span
+                            onClick={props.onShowFilterForm}
+                        >
                             <i className="fas fa-filter" />
                         </span>
                     </th>
                     <th>
                         <span>EMAIL</span>
-                        <span>
+                        <span
+                            onClick={props.onShowFilterForm}
+                        >
                             <i className="fas fa-filter" />
                         </span>
                     </th>
                     <th>
                         <span>PHONE NUMBER</span>
-                        <span>
+                        <span
+                            onClick={props.onShowFilterForm}
+                        >
                             <i className="fas fa-filter" />
                         </span>
                     </th>
                     <th>
                         <span>DATE JOINED</span>
-                        <span>
+                        <span
+                            onClick={props.onShowFilterForm}
+                        >
                             <i className="fas fa-filter" />
                         </span>
                     </th>
                     <th>
                         <span>STATUS</span>
-                        <span>
+                        <span
+                            onClick={props.onShowFilterForm}
+                        >
                             <i className="fas fa-filter" />
                         </span>
                     </th>
@@ -63,7 +76,8 @@ const UsersTable = (props: UsersTableProps) => {
             </thead>
             <tbody>
                 {
-                    props.users.map(itm => (
+                    props.users.length
+                    ? props.users.map(itm => (
                         <tr key={itm.id}>
                             <td><span>{itm.organization}</span></td>
                             <td><span>{itm.user_name}</span></td>
@@ -119,6 +133,15 @@ const UsersTable = (props: UsersTableProps) => {
                             </td>
                         </tr>
                     ))
+                    : (
+                        <tr>
+                            <td className="error-cell" colSpan={7}>
+                                <p className="empty-response">
+                                    Oops! No results found.
+                                </p>
+                            </td>
+                        </tr>
+                    )
                 }
             </tbody>
         </table>

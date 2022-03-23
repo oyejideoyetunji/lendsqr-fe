@@ -3,9 +3,10 @@ import { useDispatch, useSelector } from "react-redux";
 import Pagination from "../../components/pagination";
 import UsersStatsCard, { UsersStatsCardVariant } from "../../components/usersStatsCard";
 import UsersTable from "../../components/usersTable";
+import UsersTableFilter from "../../components/usersTableFilter";
 import { UserSumary } from "../../lib/typeDefinitions";
 import { getPageEndIndex, getPageStartIndex, usePageItems } from "../../lib/utils/pagination";
-import { useUserStats } from "../../lib/utils/userStats";
+import { useUserStats } from "../../lib/utils/users";
 import { isEmptyString } from "../../lib/validations/general";
 import request from "../../requests";
 import { getUsers } from "../../requests/endPoints";
@@ -17,9 +18,10 @@ const Users = () => {
     const dispatch = useDispatch()
     const [usersLoading, setUsersLoading] = useState(false)
     const [usersError, setUsersError] = useState("")
+    const [showFilterForm, setShowFilterForm] = useState(false)
 
     const {
-        users: { users },
+        users: { users, filteredUser },
         pagination: { pageSize, currentPageIndex }
     } = useSelector((state: StoreState) => state)
 
@@ -59,7 +61,7 @@ const Users = () => {
     const [pageItems] = usePageItems<UserSumary>({
         startIndex: getPageStartIndex({ pageSize, currentPageIndex }),
         endIndex: getPageEndIndex({ pageSize, currentPageIndex }),
-        list: users
+        list: filteredUser
     })
 
     return (
@@ -88,6 +90,16 @@ const Users = () => {
             </section>
 
             <section className="card-users-table">
+                <section
+                    className={`container-fiter-form ${showFilterForm && "open"}`}>
+                    <div
+                        className="w-fit self-align-end close-icon p-12"
+                        onClick={onCloseFilterForm}
+                    >
+                        <i className="fas fa-times" />
+                    </div>
+                    <UsersTableFilter />
+                </section>
                 {
                     usersLoading
                     ? (
@@ -105,24 +117,19 @@ const Users = () => {
                             </p>
                         </section>
                     )
-                    : users.length
-                    ? (
-                        <>
-                            <UsersTable users={pageItems} />
-                        </>
-                    )
-                    : (
-                        <section className = "w-100 flex p-18 align-center justify-center">
-                            <p className="empty-response">
-                                No results found.
-                            </p>
-                        </section>
-                    )
+                    : <UsersTable onShowFilterForm={onShowFilterForm} users={pageItems} />
                 }
             </section>
             <Pagination />
         </section>
     )
+
+    function onShowFilterForm() {
+        setShowFilterForm(true)
+    }
+    function onCloseFilterForm() {
+        setShowFilterForm(false)
+    }
 
 }
 

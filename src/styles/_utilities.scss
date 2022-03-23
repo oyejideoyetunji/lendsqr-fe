@@ -121,6 +121,26 @@ $sides: (top, bottom, left, right);
     justify-content: center;
 }
 
+.justify-end {
+    justify-content: flex-end;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.justify-around {
+    justify-content: space-around;
+}
+
+.self-align-end {
+    align-self: flex-end;
+}
+
+.self-align-start {
+    align-self: flex-start;
+}
+
 
 @mixin flex-direction($direction: false) {
     @if $direction {
@@ -246,6 +266,6 @@ $sides: (top, bottom, left, right);
 .empty-response {
     @include txt-mixin;
     color: $color-blueGrey;
-    font-weight: 300;
+    font-weight: 400;
     text-align: center
 }

@@ -4,6 +4,22 @@
     flex-direction: column;
     padding: 0;
 
+    .label {
+        @extend .block;
+        @extend .p-b-4;
+        @include small-txt-mixin;
+        color: $color-blueGrey;
+        font-weight: 500;
+    }
+
+    .error {
+        @extend .block;
+        @extend .p-t-4;
+        @include small-txt-mixin;
+        color: $color-danger;
+        font-weight: 400;
+    }
+
     select {
         @extend .w-100;
         @extend .p-y-4;
@@ -12,6 +28,8 @@
         border-radius: 4px;
         background-color: transparent;
         border: 1px solid $color-borderGrey;
+        font-size: 14px;
+        color: $color-blue1;
 
         &:focus {
             border: 1px solid $color-primary;

@@ -370,15 +370,18 @@ const ViewUserDetails = () => {
                                         </p>
 
                                         {
-                                            user?.guarantors.map(guatantor => (
-                                                <section className="container-btm-boder">
+                                            user?.guarantors.map(guarantor => (
+                                                <section
+                                                    className="container-btm-boder"
+                                                    key={guarantor.email}
+                                                >
                                                     <section className="txt-grid">
                                                         <div className="txt-area">
                                                             <span>
                                                                 FULL NAME
                                                             </span>
                                                             <p>
-                                                                {guatantor.full_name}
+                                                                {guarantor.full_name}
                                                             </p>
                                                         </div>
 
@@ -387,7 +390,7 @@ const ViewUserDetails = () => {
                                                                 PHONE NUMBER
                                                             </span>
                                                             <p>
-                                                                {guatantor.phone_number}
+                                                                {guarantor.phone_number}
                                                             </p>
                                                         </div>
 
@@ -396,7 +399,7 @@ const ViewUserDetails = () => {
                                                                 EMAIL ADDRESS
                                                             </span>
                                                             <p>
-                                                                {guatantor.email}
+                                                                {guarantor.email}
                                                             </p>
                                                         </div>
 
@@ -405,7 +408,7 @@ const ViewUserDetails = () => {
                                                                 RELATIONSHIP
                                                             </span>
                                                             <p>
-                                                                {guatantor.relationship}
+                                                                {guarantor.relationship}
                                                             </p>
                                                         </div>
                                                     </section>

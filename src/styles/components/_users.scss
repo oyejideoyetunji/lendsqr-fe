@@ -20,5 +20,43 @@
         @extend .w-100;
         @extend .p-16;
         @extend .auto-flow-x;
+        min-height: 600px;
+        position: relative;
+    }
+
+    .container-fiter-form {
+        display: flex;
+        flex-direction: column;
+        width: 0;
+        overflow-x: hidden;
+        height: fit-content;
+        border-radius: 4px;
+        background-color: $color-white;
+        box-shadow: $card-shadow;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: all 0.5s ease;
+
+        &.open {
+            width: 100%;
+            padding: 12px 0;
+            border: 1px solid $color-borderGrey;
+        }
+
+        @include respond(xs) {
+
+            &.open {
+                width: 300px;
+                padding: 12px 0;
+                border: 1px solid $color-borderGrey;
+            }
+        }
+
+        .close-icon {
+            font-size: 18px;
+            color: $color-blue1;
+            cursor: pointer;
+        }
     }
 }

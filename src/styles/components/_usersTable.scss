@@ -6,6 +6,11 @@
         @extend .w-100;
     }
 
+    td.error-cell {
+        padding-top: 100px;
+        text-align: center;
+    }
+
     td, th {
         @extend .p-y-18;
         text-align: left;

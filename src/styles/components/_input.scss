@@ -30,12 +30,16 @@
     }
 
     .label {
-        @include txt-mixin;
+        @extend .block;
+        @extend .p-b-4;
+        @include small-txt-mixin;
         color: $color-blueGrey;
         font-weight: 500;
     }
 
     .error {
+        @extend .block;
+        @extend .p-t-4;
         @include small-txt-mixin;
         color: $color-danger;
         font-weight: 400;
@@ -55,6 +59,8 @@
         @extend .w-100;
         outline: none;
         border-radius: 4px;
+        font-size: 14px;
+        color: $color-blue1;
         @include border($color-borderGrey);
 
         &::placeholder {
