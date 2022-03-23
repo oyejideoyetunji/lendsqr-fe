@@ -108,7 +108,11 @@ const ViewUserDetails = () => {
                                     <section className="flex-col_lg-row">
 
                                         <div className="basic-info-card">
-                                            <div className="avatar" />
+                                            <div
+                                                className="avatar flex align-center justify-center"
+                                            >
+                                                <i className="far fa-user" />
+                                            </div>
                                             <div className="txt-area">
                                                 <p>
                                                     {user?.personal_info.full_name}

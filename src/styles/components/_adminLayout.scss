@@ -5,11 +5,11 @@
         @extend .w-100;
         @extend .flex;
         min-height: 100vh;
-        align-items: stretch;
         padding-top: 80px;
 
         .wrp-side-bar {
             @extend .hide;
+            min-height: 100vh;
 
             @include respond(xl) {
                 display: block;
