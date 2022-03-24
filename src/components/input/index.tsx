@@ -51,9 +51,9 @@ const Input = (props: InputProps & InputHTMLAttributes<HTMLInputElement>) => {
                         `${noBorder ? "no-border" : isEmptyString(error) ? "focus-border" : "error-border"}`
                     }
                     style={{
-                        padding: `6px ${
+                        padding: `12px ${
                             childNodeRight ? childNodeWidth : "12px"
-                        } 6px ${childNodeLeft ? childNodeWidth : "12px"}`
+                        } 12px ${childNodeLeft ? childNodeWidth : "12px"}`
                     }}
                 />
             </div>

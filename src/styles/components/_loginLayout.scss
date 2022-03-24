@@ -24,11 +24,12 @@
 
     .brand-section-card {
         @extend .hide;
-        @extend .page-card-padding;
+        @extend .p-x-18;
+        @extend .p-y-40;
         @extend .w-50;
         @extend .h-100;
 
-        @include respond(lg) {
+        @include respond(md) {
             display: block;
         }
     }
@@ -36,6 +37,7 @@
     .logo-wrp {
         @extend .w-100;
         @extend .flex;
+        @extend .p-l-18;
         @include flex-justify(flex-start);
     }
 
@@ -61,7 +63,7 @@
         @extend .h-100;
         box-shadow: $page-card-shadow;
 
-        @include respond(lg) {
+        @include respond(md) {
             width: 50%;
         }
     }
@@ -69,7 +71,7 @@
     .mobile-logo-wrp {
         @extend .logo-wrp;
 
-        @include respond(lg) {
+        @include respond(md) {
             display: none;
         }
     }
@@ -79,5 +81,18 @@
         @extend .h-100;
         @extend .flex;
         @include flex-align(center);
+        @extend .p-x-12;
+
+        @include respond(md) {
+            padding: 0;
+        }
+        
+        @include respond(lg) {
+            padding: 0 32px;
+        }
+
+        @include respond(xl) {
+            padding: 0 48px;
+        }
     }
 }
