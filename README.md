@@ -16,5 +16,3 @@ After cloning the repository to a local directory, Run:
 
 ### `yarn start` to run app
 
-### same applies to the server
-
